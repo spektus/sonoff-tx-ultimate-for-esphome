@@ -160,6 +160,7 @@ substitutions:
 
   latitude: "50.123456°"
   longitude: "5.654321°"
+  timezone: "Europe/Berlin"
 
   touch_brightness: "1"
   touch_color: "{0,100,100}"
@@ -344,6 +345,9 @@ Sets the latitude of your location to determine sunrise and sunset times.
 **longitude** _(Default: "5.654321°")_  
 Sets the longitude of your location to determine sunrise and sunset times.  
   
+**timezone** _(Default: "Europe/Berlin")_
+Sets the timezone for correct time and sun position calculation.
+
 **touch_brightness** _(Default: "1")_  
 Sets the brightness level for the LEDs used in touch visualization. (Valid values: 0.0 - 1.0)  
   

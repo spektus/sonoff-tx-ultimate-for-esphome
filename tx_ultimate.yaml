@@ -20,6 +20,7 @@ substitutions:
 
   latitude: "50.123456°"
   longitude: "5.654321°"
+  timezone: "Europe/Berlin"
 
   touch_brightness: "1"
   touch_color: "{0,100,100}"
@@ -538,6 +539,7 @@ time:
     id: homeassistant_time
   - platform: sntp
     id: sntp_time
+    timezone: ${timezone}
     on_time:
       # Every 5 minutes
       - seconds: 0
