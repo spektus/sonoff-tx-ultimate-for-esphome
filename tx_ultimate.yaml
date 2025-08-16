@@ -129,6 +129,11 @@ improv_serial:
 
 captive_portal:
 
+status_led:
+  pin:
+    number: ${status_led_pin}
+    inverted: true
+
 external_components:
 #  - source: /config/esphome/my_components
   - source:
