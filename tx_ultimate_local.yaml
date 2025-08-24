@@ -20,6 +20,7 @@ substitutions:
 
   latitude: "50.123456°"
   longitude: "5.654321°"
+  timezone: "Europe/Berlin"
 
   touch_brightness: "1"
   touch_color: "{0,100,100}"
@@ -44,7 +45,6 @@ substitutions:
   relay_1_pin: GPIO18
   relay_2_pin: GPIO17
   relay_3_pin: GPIO27
-  relay_4_pin: GPIO23
 
   vibra_motor_pin: GPIO21
   pa_power_pin: GPIO26
@@ -118,15 +118,17 @@ ota:
  - platform: esphome
 
 wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
-
   ap:
     password: "12345678"
     
 improv_serial:
 
 captive_portal:
+
+status_led:
+  pin:
+    number: ${status_led_pin}
+    inverted: true
 
 external_components:
 #  - source: /config/esphome/my_components
@@ -538,6 +540,7 @@ time:
     id: homeassistant_time
   - platform: sntp
     id: sntp_time
+    timezone: ${timezone}
     on_time:
       # Every 5 minutes
       - seconds: 0
